@@ -1,0 +1,14 @@
+- [x] Proyecto Next.js inicializado con App Router, TypeScript, Tailwind CSS y Shadcn UI.
+- [x] Layout raíz con navegación y footer persistentes.
+- [x] Home con Hero Section, servicios destacados y proyectos recientes.
+- [x] Sobre Nosotros: historia y proceso artesanal.
+- [x] Galería de proyectos (ISR) y detalle de proyecto (rutas dinámicas).
+- [x] Formulario de contacto funcional con validación y Server Action.
+- [x] Archivo de datos local para proyectos.
+- [x] Suspense y esqueletos de carga.
+- [x] Middleware de seguridad.
+- [x] Página de error personalizada.
+- [x] Metadata API y next/font para SEO.
+- [x] Imágenes optimizadas y placeholders.
+- [x] README.md y archivos de SEO (robots.txt, sitemap.xml).
+- [ ] Auditoría Lighthouse y optimización final.
