@@ -28,9 +28,9 @@ const servicios = [
 export default function HomePage() {
   const proyectos = getProyectos().slice(0, 3);
   return (
-    <div className="w-full max-w-6xl mx-auto px-4 py-10">
+    <div className="w-full max-w-6xl mx-auto px-2 sm:px-4 py-6 sm:py-10">
       {/* Hero Mejorado */}
-      <section className="relative flex flex-col md:flex-row items-center gap-8 mb-16 min-h-[340px] rounded-xl overflow-hidden shadow-card animate-fade-in">
+      <section className="relative flex flex-col md:flex-row items-center gap-6 sm:gap-8 mb-10 sm:mb-16 min-h-[260px] sm:min-h-[340px] rounded-2xl overflow-hidden shadow-card animate-fade-in">
         <Image
           src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=900&q=80"
           alt="Taller de carpintería Los Artesanos"
@@ -38,26 +38,26 @@ export default function HomePage() {
           className="object-cover absolute inset-0 z-0 opacity-80"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent z-10" />
-        <div className="relative z-20 flex-1 p-10">
-          <h1 className="text-5xl md:text-6xl font-heading font-bold mb-4 text-white drop-shadow-lg">Carpintería Los Artesanos</h1>
-          <p className="text-xl text-white/90 mb-8 max-w-xl drop-shadow">Muebles a medida, restauración y carpintería estructural de alta calidad en cada proyecto.</p>
-          <Link href="/contacto" className="inline-block bg-primary text-primary-foreground px-8 py-4 rounded-xl font-semibold shadow-lg hover:bg-primary/90 transition text-lg focus:outline focus:ring-2 focus:ring-primary">
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent z-10" />
+        <div className="relative z-20 flex-1 p-4 sm:p-10 text-center md:text-left">
+          <h1 className="text-3xl sm:text-5xl md:text-6xl font-heading font-bold mb-3 sm:mb-4 text-white drop-shadow-lg leading-tight">Carpintería Los Artesanos</h1>
+          <p className="text-base sm:text-xl text-white/90 mb-6 sm:mb-8 max-w-xl drop-shadow mx-auto md:mx-0">Muebles a medida, restauración y carpintería estructural de alta calidad en cada proyecto.</p>
+          <Link href="/contacto" className="inline-block bg-primary text-primary-foreground px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold shadow-lg hover:bg-primary/90 transition text-base sm:text-lg focus:outline focus:ring-2 focus:ring-primary">
             Solicita tu presupuesto
           </Link>
         </div>
       </section>
 
       {/* Servicios Mejorados */}
-      <section className="mb-16">
-        <h2 className="text-3xl font-heading font-bold mb-8 text-primary">Servicios Destacados</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <section className="mb-10 sm:mb-16">
+        <h2 className="text-2xl sm:text-3xl font-heading font-bold mb-6 sm:mb-8 text-primary text-center">Servicios Destacados</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 sm:gap-8">
           {servicios.map((serv) => (
-            <div key={serv.titulo} className="bg-card p-8 rounded-xl shadow-card flex flex-col items-center group hover:scale-105 transition-transform animate-fade-in">
-              <span className="text-5xl mb-4" aria-hidden>{serv.icon}</span>
-              <Image src={serv.img} alt={serv.titulo} width={100} height={100} className="mb-4 rounded-xl object-cover shadow" />
-              <h3 className="font-heading font-semibold text-xl mb-2 text-secondary group-hover:text-primary transition-colors">{serv.titulo}</h3>
-              <p className="text-muted-foreground text-center text-base">{serv.descripcion}</p>
+            <div key={serv.titulo} className="bg-card p-5 sm:p-8 rounded-2xl shadow-card flex flex-col items-center group hover:scale-105 transition-transform animate-fade-in border border-border hover:border-primary/40">
+              <span className="text-4xl sm:text-5xl mb-3 sm:mb-4" aria-hidden>{serv.icon}</span>
+              <Image src={serv.img} alt={serv.titulo} width={100} height={100} className="mb-3 sm:mb-4 rounded-xl object-cover shadow" />
+              <h3 className="font-heading font-semibold text-lg sm:text-xl mb-1 sm:mb-2 text-secondary group-hover:text-primary transition-colors text-center">{serv.titulo}</h3>
+              <p className="text-muted-foreground text-center text-sm sm:text-base">{serv.descripcion}</p>
             </div>
           ))}
         </div>

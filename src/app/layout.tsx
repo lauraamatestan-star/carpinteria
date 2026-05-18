@@ -11,10 +11,10 @@ export const metadata: Metadata = siteMetadata;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es" className={`${inter.variable} ${roboto.variable} h-full antialiased`.trim()}>
-      <body className="min-h-full flex flex-col font-sans bg-background">
+    <html lang="es" className={`${inter.variable} ${roboto.variable} h-full antialiased scroll-smooth bg-background`.trim()}>
+      <body className="min-h-full flex flex-col font-sans bg-background text-foreground selection:bg-primary/20">
         <Navbar />
-        <main className="flex-1 flex flex-col w-full">
+        <main className="flex-1 flex flex-col w-full max-w-full">
           {children}
         </main>
         <Footer />

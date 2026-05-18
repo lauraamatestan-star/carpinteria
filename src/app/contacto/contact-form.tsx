@@ -34,11 +34,11 @@ export default function ContactForm() {
   }
 
   return (
-    <form className="space-y-6" onSubmit={handleSubmit} noValidate>
+    <form className="space-y-5 sm:space-y-6 bg-card p-4 sm:p-6 rounded-2xl shadow max-w-xl mx-auto border border-border" onSubmit={handleSubmit} noValidate>
       <div>
         <label className="block mb-1 font-medium">Nombre</label>
         <input
-          className="w-full border border-border rounded px-3 py-2"
+          className="w-full border border-border rounded px-3 py-2 text-base focus:ring-2 focus:ring-primary focus:outline-none"
           value={form.nombre}
           onChange={e => setForm(f => ({ ...f, nombre: e.target.value }))}
           required
@@ -48,7 +48,7 @@ export default function ContactForm() {
       <div>
         <label className="block mb-1 font-medium">Email</label>
         <input
-          className="w-full border border-border rounded px-3 py-2"
+          className="w-full border border-border rounded px-3 py-2 text-base focus:ring-2 focus:ring-primary focus:outline-none"
           type="email"
           value={form.email}
           onChange={e => setForm(f => ({ ...f, email: e.target.value }))}
@@ -59,18 +59,23 @@ export default function ContactForm() {
       <div>
         <label className="block mb-1 font-medium">Mensaje</label>
         <textarea
-          className="w-full border border-border rounded px-3 py-2"
+          className="w-full border border-border rounded px-3 py-2 text-base focus:ring-2 focus:ring-primary focus:outline-none resize-none"
+          rows={4}
           value={form.mensaje}
           onChange={e => setForm(f => ({ ...f, mensaje: e.target.value }))}
           required
         />
         {errors.mensaje && <p className="text-destructive text-sm mt-1">{errors.mensaje}</p>}
       </div>
-      <button type="submit" className="bg-primary text-primary-foreground px-6 py-2 rounded font-semibold shadow hover:bg-primary/90 transition">
-        Enviar
+      <button
+        type="submit"
+        className="bg-primary text-primary-foreground px-6 py-2 rounded-xl font-semibold shadow hover:bg-primary/90 transition w-full text-base focus:outline focus:ring-2 focus:ring-primary"
+        disabled={status === 'success'}
+      >
+        {status === 'success' ? 'Enviado' : 'Enviar'}
       </button>
-      {status === 'success' && <p className="text-green-600 font-medium">¡Mensaje enviado correctamente!</p>}
-      {status === 'error' && <p className="text-destructive font-medium">Ocurrió un error. Intenta de nuevo.</p>}
+      {status === 'success' && <p className="text-green-600 text-center font-medium mt-2">¡Mensaje enviado correctamente!</p>}
+      {status === 'error' && <p className="text-destructive text-center font-medium mt-2">Error al enviar. Intenta de nuevo.</p>}
     </form>
   );
 }
