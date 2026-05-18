@@ -5,6 +5,8 @@ export type Proyecto = {
   descripcion: string;
   imagen: string;
   materiales: string[];
+  galeria?: string[];
+  detalles?: string;
 };
 
 export const proyectos: Proyecto[] = [
